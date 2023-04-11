@@ -114,7 +114,7 @@
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>*</sup>equal contributions</span>
+            <span class="author-block"><sup>*</sup><b>equal contributions</b></span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -140,7 +140,7 @@
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv (coming soon)</span>
                 </a>
               </span>
               <!-- Video Link. -->
@@ -193,9 +193,9 @@
         alt="Interpolate start reference image."/>
 
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Factorized Inverse Path Tracing (FIPT)</span> reduces Monte Carlo variance and ambiguity in inverse rendering,
+        <span class="dnerf">Factorized Inverse Path Tracing (FIPT)</span> reduces ambiguity and Monte Carlo variance in inverse rendering,
         yielding efficient and high quality BRDF-emission, 
-        appealing relighting, and object insertion.
+        appealing relighting, and object insertion results. (See Related Works section for baseline methods.)
       </h2>
     </div>
   </div>
@@ -305,7 +305,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <!-- <div class="column"> -->
-      <div class="column is-three-fifths">
+      <div class="column is-three-fifths has-text-centered">
           <div class="content">
           <h2 class="title is-3">Pipeline</h2>
           <!-- <p>
@@ -379,7 +379,7 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Real world capture and results</h2>
+    <h2 class="title is-3">Real world captures and results</h2>
     <p>
       <b>The capture setting (left) and observations of the real world scenes (middle and right).</b>
       We present two real world scenes <b>Conference room</b> and <b>Classroom</b> with samples of captured images, reconstructed geometries in 3 views, and all camera poses.
@@ -423,12 +423,63 @@
 </section>
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Work</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There are numerous excellent works that share some aspects with ours, and may serve as our baselines.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/1903.07145"><b>IPT</b></a> and <a href="https://ci.idm.pku.edu.cn/Yu_TPAMI23.pdf"><b>MILO</b></a> both utilize differential path tracing to jointly optimize dense scene BRDF and emission. 
+          </p>
+          
+          <p>
+            IPT takes a piecewise constant parameterization of material to reduce Monte Carlo variance and ambiguity for inverse rendering, losing fine spatial details as a result (similarly in <a href="https://rgl.epfl.ch/publications/NimierDavid2021Material"><b>Nimier-David et al.</b></a>). 
+            Directly extending it to complex material representation (i.e. MILO) shows very slow convergence.
+          </p>
+
+          <p>
+            In a parallel line of work, NeRF-like methods have been representating incident radiance field of indoor scenes as a 5D network (e.g. <a href="https://machinelearning.apple.com/research/neural-incident-light-field"><b>NeILF</b></a>), usually in unconstrained fashion. 
+            Most recently, numerous works adopt similar ideas to ours by using pre-baked irradiance (e.g. 
+            <a href="https://arxiv.org/abs/2211.10206"><b>TexIR</b></a>, 
+            <a href="https://jingsenzhu.github.io/i2-sdf/"><b>I<sup>2</sup>-SDF</b></a>, 
+            <a href="https://yoyo000.github.io/NeILF_pp/"><b>NeILF++</b></a>, 
+            <a href="https://arxiv.org/abs/2303.16617"><b>NeFII</b></a>), 
+            and resort to surface rendering to recover scene materials and/or emission, without modeling view-dependent light transport.
+          </p>
+
+          <p>
+            In contrast to the aforementioned optimization-based approaches, learning-based approaches leverage lighting and material priors learned from datasets.
+            <a href="https://repo-sam.inria.fr/fungraph/deep-indoor-relight"><b>Philip et al. (FVP)</b></a> take multiple images and aggregate multiview irradiance and albedo information to a pre-trained network to synthesize the relit image.
+            <a href="https://vilab-ucsd.github.io/ucsd-IndoorLightEditing/"><b>Li et al. (Li22)</b></a> and <a href="https://jingsenzhu.github.io/invrend/"><b>Zhu et al.</b></a> learn single-view dense lighting and/or BRDF from shading cues or scene features.
+          </p>
+
+          <p>
+            There is a growing list of related papers by the time you read this. Please feel welcomed to let us know and we will update here.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-
+      BibTeX here.
     </code></pre>
   </div>
 </section>

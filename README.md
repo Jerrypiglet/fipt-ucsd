@@ -2,6 +2,9 @@
 
 This is the repository that contains source code for the [FIPT website](https://FIPT.github.io).
 
+Credit: this website is adapted from the template of [nerfies](https://github.com/nerfies/nerfies.github.io).
+
+
 If you find FIPT useful for your work please cite:
 ```
 }

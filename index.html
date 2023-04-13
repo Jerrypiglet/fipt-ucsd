@@ -94,12 +94,12 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/abs/2304.05669"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv (coming soon)</span>
+                  <span>arXiv</span>
                 </a>
               </span>
               <!-- Video Link. -->
@@ -292,32 +292,31 @@
 <section>
   <div class="container is-max-desktop">
     <div class="columns is-centered">
+
       <div class="column">
         <div class="content">
           <h2 class="title is-4">Shading initialization</h2>
           <p>
-            Diffuse and specular shadings are initialized by
-            tracing a voxel representation of the surface light field L'
+            Diffuse and specular shadings are <b>initialized</b> by
+            tracing a <b>voxel representation of the surface light field</b> <b>L'</b>
             (left), which gives approximations (top row on right) close
-            to the ground truth (bottom row on the right; obtained by
-            path tracing).
+            to the ground truth (bottom row on the right; obtained from a physical path tracer).
           </p>
           <img src="./static/images/shading_1.png"
             class="interpolation-image"
             alt="Interpolate start reference image."/>
         </div>
       </div>
-
-      <!-- Visual Effects. -->
+      
       <div class="column">
         <div class="content">
           <h2 class="title is-4">Shading refinement</h2>
           <p>
-            Cabinet's diffuse reflectance
+            The wall cabinet's diffuse reflectance
               estimation is initially darker than ground truth, owing to
               the excessive incident light received from the range hood
               that reflects non-diffuse light (2nd column). The artifacts
-              are reduced by growing the path for the specular surface
+              are reduced by <b>growing the path</b> for the specular surface
               according to the optimized BRDF (1st column), which gives
               more accurate shadings that can be used to further refine the
               BRDF (3rd column).
@@ -327,7 +326,22 @@
             alt="Interpolate start reference image."/>
         </div>
       </div>
-      <!--/ Visual Effects. -->
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Error-driven emitter estimation</h2>
+          <p>
+            Optimization without emission terms produces distinctive error near emissive surfaces (1st column). 
+            By jointly <b>optimizing an emission mask</b> to cancel this error, the <b>emitter</b> can be found by checking the mask's response (works even for tiny emitters), 
+            and its emission value can be obtained by median-pooling the RGBs from training pixels.
+          </p>
+          <img src="./static/images/emission.png"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </section>
@@ -446,9 +460,14 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>
-      BibTeX here.
-    </code></pre>
+    <pre><code>@misc{fipt2023,
+    title={Factorized Inverse Path Tracing for Efficient and Accurate Material-Lighting Estimation}, 
+    author={Liwen Wu and Rui Zhu and Mustafa B. Yaldiz and Yinhao Zhu and Hong Cai and Janarbek Matai and Fatih Porikli and Tzu-Mao Li and Manmohan Chandraker and Ravi Ramamoorthi},
+    year={2023},
+    eprint={2304.05669},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}</code></pre>
   </div>
 </section>
 

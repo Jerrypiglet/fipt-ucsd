@@ -8,6 +8,14 @@ Credit: this website is adapted from the template of [nerfies](https://github.co
 If you find FIPT useful for your work please cite our paper:
 
 ```
+@misc{fipt2023,
+      title={Factorized Inverse Path Tracing for Efficient and Accurate Material-Lighting Estimation}, 
+      author={Liwen Wu and Rui Zhu and Mustafa B. Yaldiz and Yinhao Zhu and Hong Cai and Janarbek Matai and Fatih Porikli and Tzu-Mao Li and Manmohan Chandraker and Ravi Ramamoorthi},
+      year={2023},
+      eprint={2304.05669},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 # Website License

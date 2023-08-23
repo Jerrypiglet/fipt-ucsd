@@ -50,7 +50,7 @@
           <h1 class="title is-1 publication-title">FIPT: Factorized Inverse Path Tracing <br> for Efficient and Accurate Material-Lighting Estimation</h1>
 
           <div class="is-size-4">
-            <span class="publication-venue"><b>ICCV 2023</b></span>
+            <span class="publication-venue"><b>ICCV 2023 <span style="color:blue">(oral presentation)</span></b></span>
           </div>
 
           <div class="is-size-5 publication-authors" style="margin-top:15px;">
@@ -91,12 +91,13 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="./static/FIPT_arxiv.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
+                <!-- <a href="./static/FIPT_arxiv.pdf" -->
+                  <a href="./static/05648-combined.pdf"
+                  class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper (high-res)</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
@@ -116,6 +117,16 @@
                       <i class="fab fa-youtube"></i>
                   </span>
                   <span>Video (coming soon)</span>
+                </a>
+              </span>
+              <!-- Slides Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-slideshare"></i>
+                  </span>
+                  <span>Slides (coming soon)</span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -158,10 +169,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.png"
-                type="video/mp4">
-      </video> -->
+      
       <img src="./static/images/teaser.png"
         class="interpolation-image"
         alt="Interpolate start reference image."/>
@@ -174,7 +182,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- <section class="hero is-light is-small">
   <div class="hero-body">
@@ -201,30 +208,6 @@
         <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -359,7 +342,10 @@
     <p>
       <b>Qualitative comparison of BRDF and emission on synthetic scenes</b> shows our method successfully reconstructs material reflectance (1st row), roughness (2nd row), and emission (3rd row) with high frequency details and less ambiguity. Emission estimation is shown as error heatmaps (warmer colors indicate higher emission error; GT emitter boundary is marked in white lines).
     </p>
-    <img src="./static/images/synthetic_results.png"
+    <img src="./static/images/synthetic_results_BRDF.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+    <img src="./static/images/synthetic_results_render.png"
       class="interpolation-image"
       alt="Interpolate start reference image."/>
   </div>
@@ -386,7 +372,7 @@
       <p>
         Showing 2 views per-scene. Top row shows the input views.
       </p>
-      <img src="./static/images/real_results_1.png"
+      <img src="./static/images/real_results_BRDF.png"
         class="interpolation-image"
         alt="Interpolate start reference image."/>
         
@@ -403,7 +389,7 @@
         input images with original lighting (Conference room: all ceiling lamps on; Classroom: rear lights on and fronts lights off).
         Reference photos for relit Classroom are also included as pseudo-ground truth (with rear lights off, and front lights on).
       </p>
-      <img src="./static/images/real_results_2.png"
+      <img src="./static/images/real_results_render.png"
         class="interpolation-image"
         alt="Interpolate start reference image."/>
     </div>
